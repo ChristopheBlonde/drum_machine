@@ -1,13 +1,222 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #fccfbd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p {
+  text-align: center;
+}
+h3 {
+  margin-right: 15px;
+}
+
+.drum_machine_container {
+  background-color: lightsalmon;
+  min-width: 500px;
+  min-height: 300px;
+  border-radius: 20px;
+  border: 5px solid salmon;
+  display: flex;
+  overflow: hidden;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.column-container {
+  display: flex;
+  flex: 1;
+}
+
+.column1,
+.column2 {
+  height: inherit;
+  display: flex;
+}
+.column1 {
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+}
+.column2 {
+  width: 40%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 30px;
+}
+
+.img_logo {
+  background-color: antiquewhite;
+  border-radius: 7px;
+  width: 30px;
+  height: 30px;
+}
+
+.pad_bank {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.controls_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.drum-pad {
+  width: 60px;
+  height: 60px;
+  background-color: darksalmon;
+  border: solid 1px;
+  border-radius: 5px;
+  margin-left: 15px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 10px 2px #fccfbd;
+  cursor: pointer;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.switch {
+  width: 50px;
+  height: 20px;
+  padding: 2px;
+  background-color: salmon;
+  display: flex;
+  align-items: center;
+}
+.checked {
+  width: 24px;
+  height: 18px;
+  background-color: antiquewhite;
+}
+
+.display {
+  width: 180px;
+  height: 40px;
+  background-color: #fccfbd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: solid 8px salmon;
+  outline-offset: -8px;
+}
+input[type="range"].range {
+  -webkit-appearance: none;
+  width: 90%;
+  height: 15px;
+  margin-top: 20px;
+  border-radius: 50px;
+  padding: 0;
+  font: inherit;
+  outline: none;
+  color: salmon;
+  opacity: 0.8;
+  background: antiquewhite;
+  box-sizing: border-box;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+input[type="range"]::-moz-range-track {
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+input[type="range"]::-ms-track {
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  border: solid 4px whitesmoke;
+  outline: solid 1px darkgray;
+  border-radius: 50%;
+  margin-top: -5px;
+  background: currentColor;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border: solid 4px whitesmoke;
+  outline: solid 1px darkgray;
+  border-radius: 50%;
+  margin-top: -5px;
+  background: currentColor;
+}
+input[type="range"]::-ms-thumb {
+  width: 25px;
+  height: 25px;
+  border: solid 4px whitesmoke;
+  outline: solid 1px darkgray;
+  border-radius: 50%;
+  margin-top: -5px;
+  background: currentColor;
+}
+input[type="range"]::-ms-fill-lower {
+  background-color: salmon;
+}
+input[type="range"]::-ms-fill-upper {
+  background-color: antiquewhite;
+}
+input[type="range"]::-moz-range-progress {
+  height: 0;
+  background: transparent;
+}
+input[type="range"]::-ms-tooltip {
+  display: none;
+}
+
+@media (max-width: 550px) {
+  .drum_machine_container {
+    min-width: 180px;
+    min-height: 300px;
+  }
+  .column-container {
+    flex-direction: column;
+  }
+  .drum-pad {
+    margin: 7px;
+  }
+  .logo {
+    margin-bottom: 10px;
+  }
+  .column1,
+  .column2 {
+    width: 100%;
+  }
+  .display {
+    margin-top: 10px;
+  }
 }
